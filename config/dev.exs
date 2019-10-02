@@ -23,4 +23,4 @@ config :cash_flow_ex, CashFlowEx.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  port: "5432"
+  port: "5433"

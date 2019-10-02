@@ -1,15 +1,5 @@
 version: '3.3'
 services:
-  application:
-    image: cash_flow_ex
-    container_name: cash_flow_ex
-    env_file: .env.dev
-    environment:
-      - DATABASE_URL=postgres://postgres:development@postgresql/cash_flow_ex_dev
-    ports:
-      - 4000:4000
-    depends_on:
-      - postgresql
   postgresql:
     image: postgres:10
     container_name: cash_flow_ex-postgres
@@ -17,7 +7,7 @@ services:
       - POSTGRES_DB=cash_flow_ex_dev
       - POSTGRES_PASSWORD=development
     ports:
-      - 5432:5432
+      - 5433:5432
     volumes:
       - cash_flow_ex_psql:/var/lib/postgresql/data
 volumes:
