@@ -55,7 +55,10 @@ defmodule CashFlowExWeb.Endpoint do
   """
   def init(_key, config) do
     if config[:load_from_system_env] do
-      port = Application.get_env(:cash_flow_ex, CashFlowExWeb.Endpoint)[:http][:port] || raise "expected the PORT environment variable to be set"
+      port =
+        Application.get_env(:cash_flow_ex, CashFlowExWeb.Endpoint)[:http][:port] ||
+          raise "expected the PORT environment variable to be set"
+
       {:ok, Keyword.put(config, :http, [:inet6, port: port])}
     else
       {:ok, config}
@@ -63,7 +66,8 @@ defmodule CashFlowExWeb.Endpoint do
   end
 
   defp canonical_host(conn, _opts) do
-    opts = PlugCanonicalHost.init(canonical_host: Application.get_env(:cash_flow_ex, :canonical_host))
+    opts =
+      PlugCanonicalHost.init(canonical_host: Application.get_env(:cash_flow_ex, :canonical_host))
 
     PlugCanonicalHost.call(conn, opts)
   end

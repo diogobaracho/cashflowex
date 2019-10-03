@@ -13,7 +13,12 @@ defmodule CashFlowEx.Mixfile do
       test_paths: ["test"],
       test_pattern: "**/*_test.exs",
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -65,6 +70,9 @@ defmodule CashFlowEx.Mixfile do
 
       # Authentication
       {:basic_auth, "~> 2.2"},
+
+      # Releases
+      {:distillery, "~> 2.1"},
 
       # Translations
       {:gettext, "~> 0.16"},

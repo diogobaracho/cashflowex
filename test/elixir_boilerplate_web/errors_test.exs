@@ -58,7 +58,11 @@ defmodule CashFlowExWeb.ErrorsTest do
   test "error_messages/1 should render error messages on changeset" do
     html =
       %User{}
-      |> User.changeset(%{"email" => "foo", "single_role" => %{"type" => "bar"}, "multiple_roles" => [%{"type" => ""}]})
+      |> User.changeset(%{
+        "email" => "foo",
+        "single_role" => %{"type" => "bar"},
+        "multiple_roles" => [%{"type" => ""}]
+      })
       |> changeset_to_error_messages()
 
     assert html == """
