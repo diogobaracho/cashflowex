@@ -2,12 +2,12 @@ defmodule CashFlowExGraphQL.Schema do
   use Absinthe.Schema
 
   alias CashFlowEx.Repo
+  alias CashFlowEx.Resolvers
 
   import_types(Absinthe.Type.Custom)
   import_types(CashFlowExGraphQL.Web.Schema.Types)
 
   query do
-
     field :users, type: list_of(:users) do
       resolve(&Resolvers.UserResolver.all/2)
     end
@@ -120,11 +120,14 @@ defmodule CashFlowExGraphQL.Schema do
       arg(:id, non_null(:id))
       resolve(&Resolvers.UserResolver.delete/2)
     end
-
   end
 
   def context(context) do
-    Map.put(context, :loader, Dataloader.add_source(Dataloader.new(), Repo, Dataloader.Ecto.new(Repo)))
+    Map.put(
+      context,
+      :loader,
+      Dataloader.add_source(Dataloader.new(), Repo, Dataloader.Ecto.new(Repo))
+    )
   end
 
   def plugins do

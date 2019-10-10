@@ -12,6 +12,7 @@ defmodule CashFlowExWeb.Errors.ViewTest do
   end
 
   test "render any other" do
-    assert render_to_string(CashFlowExWeb.Errors.View, "505.html", []) == "HTTP Version Not Supported"
+    assert render_to_string(CashFlowExWeb.Errors.View, "505.html", []) ==
+             "HTTP Version Not Supported"
   end
 end

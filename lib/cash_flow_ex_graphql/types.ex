@@ -80,4 +80,12 @@ defmodule CashFlowExGraphQL.Web.Schema.Types do
     field(:is_active, :boolean)
   end
 
+  object :bill_cashflows do
+    field(:title, :string)
+    field(:description, :string)
+    field(:transaction_date, :datetime)
+    field(:transation_type, :integer)
+    field(:is_consolidated, :boolean)
+    field(:amount, :float)
+  end
 end
