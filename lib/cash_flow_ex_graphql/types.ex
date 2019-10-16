@@ -1,4 +1,4 @@
-defmodule CashFlowExGraphQL.Web.Schema.Types do
+defmodule CashFlowExGraphQL.Types do
   use Absinthe.Schema.Notation
 
   #  USERS --------------------------

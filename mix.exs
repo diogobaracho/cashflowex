@@ -61,6 +61,7 @@ defmodule CashFlowEx.Mixfile do
       # GraphQL
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
+      {:absinthe_relay, "~> 1.4"},
       {:dataloader, "~> 1.0"},
       {:absinthe_error_payload, "~> 1.0"},
 
@@ -74,8 +75,14 @@ defmodule CashFlowEx.Mixfile do
       # Releases
       {:distillery, "~> 2.1"},
 
+      # Doc
+      {:ex_doc, "~> 0.21.2"},
+
       # Translations
       {:gettext, "~> 0.16"},
+
+      # Code quality
+      {:pre_commit, "~> 0.3.4", only: :dev},
 
       # Linting
       {:credo, "~> 1.1", only: [:dev, :test], override: true},

@@ -20,11 +20,11 @@ defmodule CashFlowEx.BillAccount do
     is_active
     initial_value
     user_id
-  )
+  )a
 
   def changeset(%BillAccount{} = bill_account, attrs \\ %{}) do
     bill_account
     |> cast(attrs, @fields)
-    |> validate_required([:title, :initial_value])
+    # |> validate_required([:title, :initial_value])
   end
 end

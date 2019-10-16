@@ -5,7 +5,7 @@ defmodule CashFlowExGraphQL.Schema do
   alias CashFlowEx.Resolvers
 
   import_types(Absinthe.Type.Custom)
-  import_types(CashFlowExGraphQL.Web.Schema.Types)
+  import_types(CashFlowExGraphQL.Types)
 
   query do
     field :users, type: list_of(:users) do

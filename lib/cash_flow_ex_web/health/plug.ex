@@ -1,7 +1,7 @@
 defmodule CashFlowExWeb.Health.Plug do
   use Plug.Builder
 
-  def call(%{request_path: "/health"} = conn, _) do
+  def call(%{request_path: "/api/health"} = conn, _) do
     version = Application.get_env(:cash_flow_ex, :version)
 
     conn

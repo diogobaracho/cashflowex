@@ -23,7 +23,7 @@ defmodule CashFlowEx.Cashflow do
     is_consolidated
     amount
     bill_account_id
-  )
+  )a
 
   def changeset(%Cashflow{} = cashflow, attrs \\ %{}) do
     cashflow

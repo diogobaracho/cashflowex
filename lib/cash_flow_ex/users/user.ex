@@ -51,7 +51,7 @@ defmodule CashFlowEx.User do
     celphone
     phone
     is_subscribed
-    )
+    )a
 
   def changeset(%User{} = user, attrs \\ %{}) do
     user

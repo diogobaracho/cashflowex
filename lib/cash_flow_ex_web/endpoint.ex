@@ -43,7 +43,6 @@ defmodule CashFlowExWeb.Endpoint do
   plug(Plug.Head)
 
   plug(:session)
-  plug(CashFlowExGraphQL.Router)
   plug(:halt_if_sent)
   plug(CashFlowExWeb.Router)
 
