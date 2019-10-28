@@ -25,6 +25,7 @@ defmodule CashFlowEx.BillAccount do
   def changeset(%BillAccount{} = bill_account, attrs \\ %{}) do
     bill_account
     |> cast(attrs, @fields)
+
     # |> validate_required([:title, :initial_value])
   end
 end

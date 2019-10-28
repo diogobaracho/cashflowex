@@ -7,7 +7,7 @@ defmodule CashFlowEx.Mixfile do
     [
       app: :cash_flow_ex,
       version: @version,
-      elixir: "~> 1.7",
+      elixir: "~> 1.8",
       erlang: "~> 22.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       test_paths: ["test"],
