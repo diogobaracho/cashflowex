@@ -1,7 +1,11 @@
-defmodule CashFlowExGraphQL.Types do
-  use Absinthe.Schema.Notation
+defmodule CashFlowExGraphQL.Schema.User.Types do
+  use CashFlowExGraphQL.Helpers.GqlSchemaSuite
 
-  #  USERS --------------------------
+  object :user do
+    field(:id, :id)
+    field(:name, :string)
+  end
+
   object :users do
     field(:id, :id)
     field(:email, :string)
@@ -31,15 +35,6 @@ defmodule CashFlowExGraphQL.Types do
     field(:celphone, :string)
     field(:phone, :string)
     field(:is_subscribed, :boolean)
-
-    # field(:users_addresses, list_of(:users_addresses), resolve: assoc(:users_addresses))
-    # field(:users_events, list_of(:events), resolve: assoc(:events))
-  end
-
-  input_object :update_user_params do
-    field(:firstname, :string)
-    field(:email, :string)
-    field(:id, :id)
   end
 
   object :users_addresses do
@@ -57,35 +52,9 @@ defmodule CashFlowExGraphQL.Types do
     # field(:users, :users, resolve: assoc(:users))
   end
 
-  #  END OF USERS --------------------------
-
-  object :bill_accounts do
-    field(:title, :string)
-    field(:summary, :string)
-    field(:is_active, :boolean)
-    field(:initial_value, :float)
-
-    # field(:users, :users, resolve: assoc(:users))
-  end
-
-  object :bill_categories do
-    field(:title, :string)
-    field(:description, :string)
-    field(:parent_id, :integer)
-    field(:path, :string)
-    field(:is_root, :boolean)
-    field(:position, :integer)
-    field(:level, :integer)
-    field(:children, :string)
-    field(:is_active, :boolean)
-  end
-
-  object :bill_cashflows do
-    field(:title, :string)
-    field(:description, :string)
-    field(:transaction_date, :datetime)
-    field(:transation_type, :integer)
-    field(:is_consolidated, :boolean)
-    field(:amount, :float)
+  input_object :update_user_params do
+    field(:firstname, :string)
+    field(:email, :string)
+    field(:id, :id)
   end
 end
