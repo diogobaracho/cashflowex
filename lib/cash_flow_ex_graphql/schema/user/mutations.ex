@@ -6,7 +6,6 @@ defmodule CashFlowExGraphQL.Schema.User.Mutations do
   # }
 
   object :user_mutations do
-
     # import_types(User.Types)
 
     field :create_user, type: :users do

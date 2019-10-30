@@ -1,5 +1,4 @@
 defmodule CashFlowExGraphQL.Schema.Account.Mutations do
-
   use CashFlowExGraphQL.Helpers.GqlSchemaSuite
 
   object :bill_account_mutations do

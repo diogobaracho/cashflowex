@@ -1,5 +1,4 @@
 defmodule CashFlowExGraphQL.Schema.Account.Queries do
-
   use CashFlowExGraphQL.Helpers.GqlSchemaSuite
 
   alias CashFlowEx.Resolvers

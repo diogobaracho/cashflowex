@@ -7,6 +7,7 @@ defmodule CashFlowExGraphQL.Schema.Account.Types do
   end
 
   object :bill_accounts do
+    field(:id, :id)
     field(:title, :string)
     field(:summary, :string)
     field(:is_active, :boolean)

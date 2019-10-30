@@ -29,7 +29,10 @@ defmodule CashFlowEx.Mixfile do
   def application do
     [
       mod: {CashFlowEx.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [
+        :logger,
+        :runtime_tools
+      ]
     ]
   end
 
@@ -92,8 +95,9 @@ defmodule CashFlowEx.Mixfile do
       # Security check
       {:sobelow, "~> 0.8", only: [:dev, :test], runtime: true},
 
-      # Test factories
+      ## Tests - factories and mocks
       {:ex_machina, "~> 2.3", only: :test},
+      {:mox, "~> 0.4", only: :test},
       {:faker, "~> 0.12", only: :test},
 
       # Test coverage
